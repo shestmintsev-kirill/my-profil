@@ -1,0 +1,105 @@
+<template>
+  <transition name="mobil">
+    <nav class="mobilnav">
+      <div class="mobilnav-list">
+        <ul @click="$emit('unvisible')" v-scroll-spy-active v-scroll-spy-link>
+          <li><a>Home</a></li>
+          <li><a>About me</a></li>
+          <li><a>Skills</a></li>
+          <li><a>Portfolio</a></li>
+          <li><a>Contacts</a></li>
+        </ul>
+      </div>
+      <div class="mobile-lang">
+        <div class="close">
+          <img @click="$emit('back')" src="@/assets/close.png" alt="" />
+        </div>
+        <div class="link">
+          <router-link to="/ru">RU</router-link> |
+          <router-link to="/">ENG</router-link>
+        </div>
+      </div>
+    </nav>
+  </transition>
+</template>
+
+<script>
+export default {
+  name: "MobilNavbar"
+};
+</script>
+
+<style scoped lang="scss">
+@import "@/assets/scss/style.scss";
+
+.mobil-leave-active {
+  opacity: 0;
+}
+
+.mobilnav {
+  width: 100%;
+  height: 100vh;
+  z-index: 11;
+  background: rgba(255, 255, 255, 0.98);
+  position: fixed;
+  left: 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 45px;
+  animation: opacity 0.3s linear;
+  transition: all 0.5s ease;
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  ul {
+    font-size: 20px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    li:not(:last-child) {
+      margin-bottom: 50px;
+
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .mobile-lang {
+    display: flex;
+    flex-direction: column;
+
+    .close {
+      text-align: center;
+      padding-top: 20px;
+      cursor: pointer;
+    }
+
+    .link {
+      transform: rotate(90deg);
+      margin-top: 200px;
+      font-size: 20px;
+    }
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+</style>
