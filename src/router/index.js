@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ENG from "../views/ENG.vue";
-import RU from "../views/RU.vue";
-import Portfolio from "../views/Portfolio.vue";
+import ENG from "@/views/ENG.vue";
+import RU from "@/views/RU.vue";
+import Portfolio from "@/views/Portfolio.vue";
 
 Vue.use(VueRouter);
 

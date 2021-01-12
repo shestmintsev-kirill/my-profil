@@ -53,7 +53,6 @@ export default {
 @import "@/assets/scss/style.scss";
 .transform {
   transition: 0.3s;
-  cursor: pointer;
   &:hover {
     transform: scale(1.1);
   }
