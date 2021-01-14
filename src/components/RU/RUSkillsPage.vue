@@ -95,13 +95,12 @@ export default {
     }
   }
   @media (max-width: $screen-xs-max) {
+    padding-top: 40px;
+
     .transform {
       margin-bottom: 60px;
     }
     &-text {
-      margin-top: 40px;
-    }
-    &-title {
       margin-top: 40px;
     }
     &-content {
@@ -112,12 +111,12 @@ export default {
   }
 
   @media (min-width: $screen-sm) {
+    padding-top: 90px;
+
     &-text {
       margin-top: 70px;
     }
-    &-title {
-      margin-top: 90px;
-    }
+
     &-content {
       margin-bottom: 100px;
       margin-top: 80px;

@@ -57,7 +57,7 @@ $circle-margin: 7px;
     height: $circle-size;
     border-radius: 50%;
     opacity: 0.7;
-    animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+    animation: scale 2s infinite cubic-bezier(0, 0, 0.5, 1);
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div v-scroll-spy="{ offset: 30 }">
+  <div v-scroll-spy="{ offset: -10 }">
     <HomePage />
     <AboutPage />
     <SkillsPage />

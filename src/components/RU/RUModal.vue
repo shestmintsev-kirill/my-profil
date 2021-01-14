@@ -84,7 +84,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/style.scss";
 * {
-  @include font-eng;
+  @include font-ru;
 }
 
 input::-webkit-outer-spin-button,

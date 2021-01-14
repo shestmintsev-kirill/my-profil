@@ -11,7 +11,7 @@
         Отправить сообщение
       </button>
       <RUModal v-if="showModal" @close="showModal = false">
-        <h3 slot="header">Write me</h3>
+        <h3 slot="header">Напишите мне</h3>
       </RUModal>
     </div>
     <div class="section-contact-sosial">
@@ -54,6 +54,7 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/scss/style.scss";
+
 img {
   transition: 0.3s;
   &:hover {

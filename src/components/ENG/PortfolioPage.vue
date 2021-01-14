@@ -6,33 +6,41 @@
       </div>
       <div class="section-partfolio-project">
         <div class="section-partfolio-project-promo">
-          <a
-            target="_blank"
-            href="https://github.com/shestmintsev-kirill/vuefirstproject"
+          <router-link to="/portfolio-store"
             ><img src="@/assets/onlinestore.png" alt=""
-          /></a>
+          /></router-link>
+          <div class="after">
+            Project - Online store using Firebase, Vuex, Vue-router and Vuetify
+          </div>
+        </div>
+        <div class="section-partfolio-project-link">
+          <router-link to="/portfolio-store">More...</router-link>
         </div>
         <div class="section-partfolio-project-title">
           <a
             target="_blank"
             href="https://github.com/shestmintsev-kirill/vuefirstproject"
-            >Online Store - Homepage</a
+            >Online Store > GitHub</a
           >
         </div>
       </div>
       <div class="section-partfolio-project">
         <div class="section-partfolio-project-promo">
-          <a
-            target="_blank"
-            href="https://github.com/shestmintsev-kirill/Movies-app"
+          <router-link to="/portfolio-movie"
             ><img src="@/assets/movies.png" alt=""
-          /></a>
+          /></router-link>
+          <div class="after">
+            Project - Movies Top 250 using Vue-router, Vuex and Bootstrap-vue
+          </div>
+        </div>
+        <div class="section-partfolio-project-link">
+          <router-link to="/portfolio-movie">More...</router-link>
         </div>
         <div class="section-partfolio-project-title">
           <a
             target="_blank"
             href="https://github.com/shestmintsev-kirill/Movies-app"
-            >Movies Top - Homepage</a
+            >Movies Top > GitHub</a
           >
         </div>
       </div>
@@ -49,11 +57,37 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/scss/style.scss";
 
+.after {
+  line-height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 30px;
+  width: 60%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background: rgba(146, 146, 146, 0.6);
+  color: white;
+  clip-path: circle(0% at 50% 50%);
+  transition: all 0.6s;
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
 img {
   width: 100%;
+  height: 100%;
   margin-bottom: 35px;
   transition: 0.3s;
   border-radius: 5px;
+  transition: all 0.5s;
 
   &:hover {
     box-shadow: 0px 0 10px 4px rgba(0, 2, 3, 0.2);
@@ -83,6 +117,48 @@ img {
 
     &-title {
       margin-bottom: 100px;
+    }
+
+    &-promo {
+      position: relative;
+      margin: 20px;
+
+      &:hover .after {
+        clip-path: circle(100% at 50% 50%);
+      }
+      &:hover img {
+        transform: scale(1.05);
+      }
+      @media (min-width: $screen-sm) {
+        &:hover img {
+          filter: blur(2px);
+        }
+      }
+    }
+
+    &-link {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -30px;
+      @media (max-width: $screen-xs-max) {
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: #2e3052;
+        border-radius: 20px;
+        border: 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 5px 10px;
+        background-color: rgba(196, 196, 196, 0.6);
+        transition: 0.3s;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        }
+      }
     }
   }
 }
