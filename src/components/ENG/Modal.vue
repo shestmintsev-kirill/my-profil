@@ -39,7 +39,11 @@
                   required
                 />
                 <div class="modal-footer">
-                  <button type="submit" class="modal-default-button send">
+                  <button
+                    @click="showAlert"
+                    type="submit"
+                    class="modal-default-button send"
+                  >
                     Send
                   </button>
                   <button
@@ -71,11 +75,11 @@ export default {
   }),
   methods: {
     send() {
-      (this.msg.name = null),
-        (this.msg.email = null),
-        (this.msg.tel = null),
-        (this.msg.message = null);
       console.log(this.msg);
+      this.$emit("close");
+    },
+    showAlert() {
+      alert("Thank you for contacting me");
     }
   }
 };

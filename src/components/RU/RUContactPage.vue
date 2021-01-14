@@ -5,6 +5,8 @@
     </div>
     <div class="section-contact-text">
       <span>Свяжитесь со мной любым удобным для Вас способом</span>
+      <p>+7-978-599-56-22</p>
+      <p>1kirillmihail1@gmail.com</p>
     </div>
     <div class="section-contact-btn">
       <button id="show-modal" @click="showModal = true" class="animation">
@@ -92,7 +94,6 @@ button {
 
   &-text {
     text-align: center;
-    margin-bottom: 30px;
   }
 
   &-btn {
