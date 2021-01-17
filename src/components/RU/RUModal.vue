@@ -1,7 +1,7 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
+    <div @click.self="$emit('close')" class="modal-mask">
+      <div @click.self="$emit('close')" class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-header">
             <slot name="header">
@@ -41,6 +41,7 @@
                 <div class="modal-footer">
                   <button
                     @click="showAlert"
+                    @keyup.enter="showAlert"
                     type="submit"
                     class="modal-default-button send"
                   >

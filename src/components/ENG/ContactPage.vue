@@ -56,6 +56,7 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/scss/style.scss";
+
 img {
   transition: 0.3s;
   &:hover {
