@@ -1,14 +1,13 @@
 <template>
   <section class="section-outer section-about">
     <div class="section-about-title">
-      <span>About me</span>
+      <span>{{ $t("AboutPage.title") }}</span>
     </div>
     <div class="section-about-description">
-      <p>
-        Hi, I'm Kirill – Junior Frontend developer from Moscow. I'm interested
-        in web development and everything connected with it.
-        <br /><br />
-        I finished courses on Udemy platform
+      <i18n path="AboutPage.about">
+        <br slot="break" />
+      </i18n>
+      <span>
         <a
           target="_blank"
           href="https://www.udemy.com/certificate/UC-53816070-96d5-417b-822d-7b09d970e031/"
@@ -21,8 +20,8 @@
           >Vue project
         </a>
         <br /><br />
-        I am ready to implement projects with a cool team
-      </p>
+        {{ $t("AboutPage.aboutNext") }}
+      </span>
     </div>
   </section>
 </template>

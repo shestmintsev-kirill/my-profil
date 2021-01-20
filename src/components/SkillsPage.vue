@@ -1,10 +1,10 @@
 <template>
   <section class="section-outer section-skills">
     <div class="section-skills-title text-center ">
-      <span>Skills</span>
+      <span>{{ $t("SkillsPage.title") }}</span>
     </div>
     <div class="section-skills-text text-center ">
-      <span>I work in such programs as</span>
+      <span>{{ $t("SkillsPage.description") }}</span>
     </div>
     <div class="section-skills-content">
       <div class="section-skills-content-html transform">

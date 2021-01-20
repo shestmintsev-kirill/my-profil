@@ -1,20 +1,20 @@
 <template>
   <footer class="section-outer section-contact">
     <div class="section-contact-title">
-      <span>Контакты</span>
+      <span>{{ $t("ContactPage.title") }}</span>
     </div>
     <div class="section-contact-text">
-      <span>Свяжитесь со мной любым удобным для Вас способом</span>
+      <span>{{ $t("ContactPage.description") }}</span>
       <p>+7-978-599-56-22</p>
       <p>1kirillmihail1@gmail.com</p>
     </div>
     <div class="section-contact-btn">
       <button id="show-modal" @click="showModal = true" class="animation">
-        Отправить сообщение
+        {{ $t("ContactPage.btn") }}
       </button>
-      <RUModal v-if="showModal" @close="showModal = false">
-        <h3 slot="header">Напишите мне</h3>
-      </RUModal>
+      <Modal v-if="showModal" @close="showModal = false">
+        <h3 slot="header">{{ $t("ContactPage.modalTitle") }}</h3>
+      </Modal>
     </div>
     <div class="section-contact-sosial">
       <a target="_blank" href="https://vk.com/kir9i_l2"
@@ -28,7 +28,7 @@
     </div>
     <div class="section-contact-footer">
       <span
-        >Я в социальных сетях <br />
+        >{{ $t("ContactPage.sosial") }}<br />
         <a target="_blank" href="https://vk.com/kir9i_l2"> VK </a>|
         <!-- eslint-disable-next-line -->
         <a target="_blank" href="https://www.instagram.com/kirilljora"> Instagram </a>|
@@ -41,12 +41,12 @@
 </template>
 
 <script>
-import RUModal from "@/components/RU/RUModal";
+import Modal from "@/components/Modal";
 
 export default {
-  name: "RUContactPage",
+  name: "ContactPage",
   components: {
-    RUModal
+    Modal
   },
   data: () => ({
     showModal: false
@@ -126,11 +126,17 @@ button {
 
   @media (min-width: $screen-md) {
     &-text {
-      width: 20%;
+      width: 40%;
     }
 
     &-sosial {
       width: 20%;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    &-text {
+      width: 25%;
     }
   }
 }

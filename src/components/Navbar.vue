@@ -2,7 +2,7 @@
   <nav class="nav">
     <ul v-scroll-spy-active v-scroll-spy-link>
       <li v-for="link in links" :key="link">
-        <a>{{ link }}</a>
+        <a>{{ $t(link) }}</a>
       </li>
     </ul>
   </nav>
@@ -12,7 +12,13 @@
 export default {
   name: "Navbar",
   data: () => ({
-    links: ["Home", "About me", "Skills", "Portfolio", "Contacts"]
+    links: [
+      "Navbar.home",
+      "Navbar.about",
+      "Navbar.skills",
+      "Navbar.portfolio",
+      "Navbar.contact"
+    ]
   })
 };
 </script>

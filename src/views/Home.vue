@@ -1,5 +1,5 @@
 <template>
-  <div v-scroll-spy="{ offset: -10 }">
+  <div v-scroll-spy="{ offset: 30 }">
     <HomePage />
     <AboutPage />
     <SkillsPage />
@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import HomePage from "@/components/ENG/HomePage.vue";
-import AboutPage from "@/components/ENG/AboutPage.vue";
-import SkillsPage from "@/components/ENG/SkillsPage.vue";
-import PortfolioPage from "@/components/ENG/PortfolioPage.vue";
-import ContactPage from "@/components/ENG/ContactPage.vue";
+import HomePage from "@/components/HomePage.vue";
+import AboutPage from "@/components/AboutPage.vue";
+import SkillsPage from "@/components/SkillsPage.vue";
+import PortfolioPage from "@/components/PortfolioPage.vue";
+import ContactPage from "@/components/ContactPage.vue";
 
 export default {
-  name: "ENG",
+  name: "Home",
   components: {
     HomePage,
     AboutPage,
@@ -31,5 +31,6 @@ export default {
 @import "@/assets/scss/style.scss";
 * {
   @include font-eng;
+  @include font-ru;
 }
 </style>

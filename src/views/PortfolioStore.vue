@@ -3,15 +3,12 @@
     <div class="section-inner">
       <div class="section-partfolio-title">
         <div class="section-partfolio-title-back">
-          <router-link to="/ru"
+          <router-link to="/"
             ><img class="back" src="@/assets/back.png" alt=""
           /></router-link>
         </div>
         <div class="section-partfolio-title-text">
-          <span
-            >Онлайн магазин с использованием Firebase, Vuex, Vue-router и
-            Vuetify</span
-          >
+          <span>{{ $t("PortfolioStore.title") }}</span>
           <div class="github">
             <a
               target="_blank"
@@ -37,6 +34,13 @@
           <hr />
           <img src="@/assets/productNew.png" alt="img" />
         </div>
+        <!-- <div class="section-partfolio-project-title">
+          <a
+            target="_blank"
+            href="https://github.com/shestmintsev-kirill/vuefirstproject"
+            >Online Store - Homepage</a
+          >
+        </div> -->
       </div>
     </div>
   </section>
@@ -44,13 +48,14 @@
 
 <script>
 export default {
-  name: "RUPortfolioStore"
+  name: "PortfolioStore"
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/scss/style.scss";
 * {
+  @include font-eng;
   @include font-ru;
 }
 

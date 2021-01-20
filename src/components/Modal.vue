@@ -14,27 +14,27 @@
                 <input
                   class="input-Name"
                   type="text"
-                  placeholder="Имя"
+                  :placeholder="$t('Modal.name')"
                   v-model="msg.name"
                   required
                 />
                 <input
                   class="input-Email"
                   type="email"
-                  placeholder="Эл. почта"
+                  :placeholder="$t('Modal.email')"
                   v-model="msg.email"
                   required
                 />
                 <input
                   class="input-Tel"
                   type="number"
-                  placeholder="Номер телефона"
+                  :placeholder="$t('Modal.tel')"
                   v-model="msg.tel"
                 />
                 <textarea
                   class="input-Message"
                   type="text"
-                  placeholder="Сообщение"
+                  :placeholder="$t('Modal.message')"
                   v-model="msg.message"
                   required
                 />
@@ -45,13 +45,13 @@
                     type="submit"
                     class="modal-default-button send"
                   >
-                    Отправить
+                    {{ $t("Modal.send") }}
                   </button>
                   <button
                     class="modal-default-button close"
                     @click="$emit('close')"
                   >
-                    Закрыть
+                    {{ $t("Modal.close") }}
                   </button>
                 </div>
               </form>
@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  name: "RUModal",
+  name: "Modal",
   data: () => ({
     msg: {
       name: null,
@@ -80,7 +80,7 @@ export default {
       this.$emit("close");
     },
     showAlert() {
-      alert("Спасибо что связались со мной");
+      alert("Thank you for contacting me");
     }
   }
 };
@@ -89,6 +89,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/style.scss";
 * {
+  @include font-eng;
   @include font-ru;
 }
 

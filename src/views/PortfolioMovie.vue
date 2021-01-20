@@ -3,15 +3,12 @@
     <div class="section-inner">
       <div class="section-partfolio-title">
         <div class="section-partfolio-title-back">
-          <router-link to="/ru"
+          <router-link to="/"
             ><img class="back" src="@/assets/back.png" alt=""
           /></router-link>
         </div>
         <div class="section-partfolio-title-text">
-          <span
-            >Топ 250 фильмов с использованием Vue-router, Vuex и
-            Bootstrap-vue</span
-          >
+          <span>{{ $t("PortfolioMovie.title") }}</span>
           <div class="github">
             <a
               target="_blank"
@@ -33,6 +30,13 @@
           <hr />
           <img src="@/assets/moviePagination.png" alt="img" />
         </div>
+        <!-- <div class="section-partfolio-project-title">
+          <a
+            target="_blank"
+            href="https://github.com/shestmintsev-kirill/vuefirstproject"
+            >Online Store - Homepage</a
+          >
+        </div> -->
       </div>
     </div>
   </section>
@@ -40,13 +44,14 @@
 
 <script>
 export default {
-  name: "RUPortfolioMovie"
+  name: "PortfolioMovie"
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/scss/style.scss";
 * {
+  @include font-eng;
   @include font-ru;
 }
 

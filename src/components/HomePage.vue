@@ -5,20 +5,19 @@
     <div class="section-header-name">
       <div class="section-header-name-me">
         <div class="name">
-          <span>Kirill <br />Shestmintsev</span>
+          <i18n path="HomePage.name"><br slot="break"/></i18n>
         </div>
         <div @click="navClick" class="icon">
           <img class="image-icon" src="@/assets/menu.png" alt="" />
         </div>
         <div class="profession">
-          <span
-            >Frontend developer <br />
-            22 years old, Moscow</span
-          >
+          <i18n path="HomePage.profession"><br slot="break"/></i18n>
         </div>
         <div class="lang">
-          <router-link to="/ru">RU</router-link> |
-          <router-link to="/">ENG</router-link>
+          <a @click.prevent="setLocale('ru')" href="/">RU</a> |
+          <a @click.prevent="setLocale('en')" href="/">ENG</a>
+          <!-- <router-link to="/ru">RU</router-link> |
+          <router-link to="/">ENG</router-link> -->
         </div>
       </div>
       <div class="section-header-name-photo">
@@ -29,8 +28,8 @@
 </template>
 
 <script>
-import Navbar from "@/components/ENG/Navbar.vue";
-import MobilNavbar from "@/components/ENG/MobilNavbar.vue";
+import Navbar from "@/components/Navbar.vue";
+import MobilNavbar from "@/components/MobilNavbar.vue";
 
 export default {
   name: "HomePage",
@@ -48,6 +47,9 @@ export default {
     },
     closeNav() {
       this.navigation = false;
+    },
+    setLocale(locale) {
+      this.$i18n.locale = locale;
     }
   }
 };

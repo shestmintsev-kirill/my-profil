@@ -2,15 +2,13 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import "normalize-scss";
-import scrollSpy, { Easing } from "vue2-scrollspy";
-
-Vue.use(scrollSpy, {
-  easing: Easing.Cubic.In
-});
+import "./plugins/scrollSpy";
+import { i18n } from "./plugins/i18n";
 
 Vue.config.productionTip = false;
 
 new Vue({
+  i18n,
   router,
   render: h => h(App)
 }).$mount("#app");

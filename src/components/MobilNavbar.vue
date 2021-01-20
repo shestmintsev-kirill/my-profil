@@ -3,20 +3,18 @@
     <nav class="mobilnav">
       <div class="mobilnav-list">
         <ul @click="$emit('unvisible')" v-scroll-spy-active v-scroll-spy-link>
-          <li><a>Home</a></li>
-          <li><a>About me</a></li>
-          <li><a>Skills</a></li>
-          <li><a>Portfolio</a></li>
-          <li><a>Contacts</a></li>
+          <li v-for="link in links" :key="link">
+            <a>{{ $t(link) }}</a>
+          </li>
         </ul>
       </div>
       <div class="mobile-lang">
         <div class="close">
           <img @click="$emit('back')" src="@/assets/close.png" alt="" />
         </div>
-        <div class="link">
-          <router-link to="/ru">RU</router-link> |
-          <router-link to="/">ENG</router-link>
+        <div @click="$emit('unvisible')" class="link">
+          <a @click.prevent="setLocale('ru')" href="/">RU</a> |
+          <a @click.prevent="setLocale('en')" href="/">ENG</a>
         </div>
       </div>
     </nav>
@@ -25,7 +23,21 @@
 
 <script>
 export default {
-  name: "MobilNavbar"
+  name: "MobilNavbar",
+  data: () => ({
+    links: [
+      "Navbar.home",
+      "Navbar.about",
+      "Navbar.skills",
+      "Navbar.portfolio",
+      "Navbar.contact"
+    ]
+  }),
+  methods: {
+    setLocale(locale) {
+      this.$i18n.locale = locale;
+    }
+  }
 };
 </script>
 

@@ -2,7 +2,7 @@
   <section class="section-outer section-partfolio">
     <div class="section-inner">
       <div class="section-partfolio-title">
-        <span>Portfolio</span>
+        <span>{{ $t("PortfolioPage.title") }}</span>
       </div>
       <div class="section-partfolio-project">
         <div class="section-partfolio-project-promo">
@@ -10,11 +10,13 @@
             ><img src="@/assets/onlinestore.png" alt=""
           /></router-link>
           <div class="after">
-            Project - Online store using Firebase, Vuex, Vue-router and Vuetify
+            {{ $t("PortfolioPage.onlineStore") }}
           </div>
         </div>
         <div class="section-partfolio-project-link">
-          <router-link to="/portfolio-store">More...</router-link>
+          <router-link to="/portfolio-store">
+            {{ $t("PortfolioPage.link") }}</router-link
+          >
         </div>
         <div class="section-partfolio-project-title">
           <a
@@ -30,11 +32,13 @@
             ><img src="@/assets/movies.png" alt=""
           /></router-link>
           <div class="after">
-            Project - Movies Top 250 using Vue-router, Vuex and Bootstrap-vue
+            {{ $t("PortfolioPage.movieApp") }}
           </div>
         </div>
         <div class="section-partfolio-project-link">
-          <router-link to="/portfolio-movie">More...</router-link>
+          <router-link to="/portfolio-movie">
+            {{ $t("PortfolioPage.link") }}</router-link
+          >
         </div>
         <div class="section-partfolio-project-title">
           <a
@@ -143,6 +147,9 @@ img {
       margin-top: -30px;
       @media (max-width: $screen-xs-max) {
         margin-bottom: 10px;
+        a {
+          font-size: 12px;
+        }
       }
 
       a {

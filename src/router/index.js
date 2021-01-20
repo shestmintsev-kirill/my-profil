@@ -1,24 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ENG from "@/views/ENG/ENG.vue";
-import RU from "@/views/RU/RU.vue";
-import PortfolioStore from "@/views/ENG/PortfolioStore.vue";
-import PortfolioMovie from "@/views/ENG/PortfolioMovie.vue";
-import RUPortfolioStore from "@/views/RU/RUPortfolioStore.vue";
-import RUPortfolioMovie from "@/views/RU/RUPortfolioMovie.vue";
+import Home from "@/views/Home.vue";
+import PortfolioStore from "@/views/PortfolioStore.vue";
+import PortfolioMovie from "@/views/PortfolioMovie.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "ENG",
-    component: ENG
-  },
-  {
-    path: "/ru",
-    name: "RU",
-    component: RU
+    name: "Home",
+    component: Home
   },
   {
     path: "/portfolio-store",
@@ -29,16 +21,6 @@ const routes = [
     path: "/portfolio-movie",
     name: "PortfolioMovie",
     component: PortfolioMovie
-  },
-  {
-    path: "/ru-portfolio-store",
-    name: "RUPortfolioStore",
-    component: RUPortfolioStore
-  },
-  {
-    path: "/ru-portfolio-movie",
-    name: "RUPortfolioMovie",
-    component: RUPortfolioMovie
   }
 ];
 
