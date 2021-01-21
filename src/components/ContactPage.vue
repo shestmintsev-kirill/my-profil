@@ -20,11 +20,15 @@
       <a target="_blank" href="https://vk.com/kir9i_l2"
         ><img src="@/assets/vk.png" alt=""
       /></a>
-      <a target="_blank" href=""><img src="@/assets/instagram.png" alt=""/></a>
+      <a target="_blank" href="https://www.instagram.com/kirilljora"
+        ><img src="@/assets/instagram.png" alt=""
+      /></a>
       <a target="_blank" href="https://github.com/shestmintsev-kirill"
         ><img src="@/assets/github.png" alt=""
       /></a>
-      <a target="_blank" href=""><img src="@/assets/linkedin.png" alt=""/></a>
+      <a target="_blank" href="https://www.linkedin.com/in/KShestmintsev/"
+        ><img src="@/assets/linkedin.png" alt=""
+      /></a>
     </div>
     <div class="section-contact-footer">
       <span
@@ -34,7 +38,8 @@
         <a target="_blank" href="https://www.instagram.com/kirilljora"> Instagram </a>|
         <!-- eslint-disable-next-line -->
         <a target="_blank" href="https://github.com/shestmintsev-kirill"> GitHub </a>|
-        <a target="_blank" href=""> LinkedIn </a>
+        <!-- eslint-disable-next-line -->
+        <a target="_blank" href="https://www.linkedin.com/in/KShestmintsev/"> LinkedIn </a>
       </span>
     </div>
   </footer>
