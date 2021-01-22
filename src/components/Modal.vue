@@ -10,39 +10,39 @@
           </div>
           <div class="modal-body">
             <slot name="body">
-              <form @submit.prevent="send">
+              <form action="https://formspree.io/f/mnqowzgd" method="POST">
                 <input
                   class="input-Name"
+                  name="name"
                   type="text"
                   :placeholder="$t('Modal.name')"
-                  v-model="msg.name"
                   required
                 />
                 <input
                   class="input-Email"
                   type="email"
+                  name="_replyto"
                   :placeholder="$t('Modal.email')"
-                  v-model="msg.email"
                   required
                 />
                 <input
                   class="input-Tel"
                   type="number"
+                  name="tel"
                   :placeholder="$t('Modal.tel')"
-                  v-model="msg.tel"
                 />
                 <textarea
                   class="input-Message"
                   type="text"
+                  name="message"
                   :placeholder="$t('Modal.message')"
-                  v-model="msg.message"
                   required
                 />
+                <!-- <input type="submit" value="Send" /> -->
                 <div class="modal-footer">
                   <button
-                    @click="showAlert"
-                    @keyup.enter="showAlert"
                     type="submit"
+                    value="Send"
                     class="modal-default-button send"
                   >
                     {{ $t("Modal.send") }}
@@ -65,24 +65,7 @@
 
 <script>
 export default {
-  name: "Modal",
-  data: () => ({
-    msg: {
-      name: null,
-      email: null,
-      tel: null,
-      message: null
-    }
-  }),
-  methods: {
-    send() {
-      console.log(this.msg);
-      this.$emit("close");
-    },
-    showAlert() {
-      alert("Thank you for contacting me");
-    }
-  }
+  name: "Modal"
 };
 </script>
 
