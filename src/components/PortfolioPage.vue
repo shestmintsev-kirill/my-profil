@@ -24,6 +24,9 @@
             href="https://github.com/shestmintsev-kirill/vuefirstproject"
             >Online Store > GitHub</a
           >
+          <a target="_blank" href="https://onlinestore2-63245.firebaseapp.com/"
+            >Firebase</a
+          >
         </div>
       </div>
       <div class="section-partfolio-project">
@@ -45,6 +48,11 @@
             target="_blank"
             href="https://github.com/shestmintsev-kirill/Movies-app"
             >Movies Top > GitHub</a
+          >
+          <a
+            target="_blank"
+            href="https://shestmintsev-kirill.github.io/Movies-app/"
+            >GitHub Pages</a
           >
         </div>
       </div>
@@ -83,6 +91,14 @@ export default {
   @media (max-width: $screen-xs-max) {
     display: none;
   }
+
+  &-target {
+    color: white;
+
+    &:hover {
+      color: rgb(230, 230, 230);
+    }
+  }
 }
 
 img {
@@ -120,7 +136,10 @@ img {
     align-items: center;
 
     &-title {
+      display: flex;
+      width: 100%;
       margin-bottom: 100px;
+      justify-content: space-around;
     }
 
     &-promo {
