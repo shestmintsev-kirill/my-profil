@@ -50,7 +50,8 @@ export const i18n = new VueI18n({
         tel: "Tel",
         message: "Message",
         send: "Send",
-        close: "Close"
+        close: "Close",
+        alert: "Thank you for contacting me"
       },
       PortfolioStore: {
         title: "Online store using Firebase, Vuex, Vue-router and Vuetify"
@@ -102,7 +103,8 @@ export const i18n = new VueI18n({
         tel: "Номер телефона",
         message: "Сообщение",
         send: "Отправить",
-        close: "Закрыть"
+        close: "Закрыть",
+        alert: "Спасибо что связались со мной"
       },
       PortfolioStore: {
         title:
