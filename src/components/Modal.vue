@@ -49,7 +49,10 @@
                   >
                     {{ $t("Modal.send") }}
                   </button>
-                  <button class="modal-default-button close">
+                  <button
+                    class="modal-default-button close"
+                    @click="$emit('close')"
+                  >
                     {{ $t("Modal.close") }}
                   </button>
                 </div>
