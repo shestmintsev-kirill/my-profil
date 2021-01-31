@@ -120,6 +120,8 @@ button {
   }
 
   @media (max-width: $screen-sm-max) {
+    margin-top: 60px;
+
     &-text {
       width: 100%;
     }
@@ -130,6 +132,8 @@ button {
   }
 
   @media (min-width: $screen-md) {
+    margin-top: 110px;
+
     &-text {
       width: 40%;
     }

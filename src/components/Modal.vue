@@ -78,7 +78,7 @@ export default {
   }),
   methods: {
     send() {
-      if ((this.msg.email, this.msg.message)) {
+      if ((this.msg.email.length, this.msg.message)) {
         this.$emit("close");
       }
     }

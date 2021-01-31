@@ -120,8 +120,15 @@ img {
   margin-right: auto;
 }
 .section-partfolio {
-  padding-top: 110px;
   background: #f6f6f6;
+
+  @media (max-width: $screen-xs-max) {
+    padding-top: 60px;
+  }
+
+  @media (min-width: $screen-sm) {
+    padding-top: 110px;
+  }
 
   &-title {
     text-align: center;

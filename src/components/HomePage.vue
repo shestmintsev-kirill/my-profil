@@ -5,7 +5,9 @@
     <div class="section-header-name">
       <div class="section-header-name-me">
         <div class="name">
-          <i18n path="HomePage.name"><br slot="break"/></i18n>
+          <h1>
+            <i18n path="HomePage.name"><br slot="break"/></i18n>
+          </h1>
         </div>
         <div @click="navClick" class="icon">
           <img class="image-icon" src="@/assets/menu.png" alt="" />
@@ -61,6 +63,9 @@ export default {
 * {
   position: relative;
 }
+h1 {
+  font-size: 1em;
+}
 
 .image-icon {
   border-radius: 20px;
@@ -112,7 +117,6 @@ export default {
     }
 
     &-photo {
-      margin-bottom: 100px;
       img {
         width: 100%;
         border-radius: 10px;
@@ -139,6 +143,10 @@ export default {
           display: none;
         }
       }
+
+      &-photo {
+        margin-bottom: 50px;
+      }
     }
   }
 
@@ -149,6 +157,10 @@ export default {
         .icon {
           display: none;
         }
+      }
+
+      &-photo {
+        margin-bottom: 100px;
       }
     }
   }
