@@ -18,16 +18,16 @@
     </div>
     <div class="section-contact-sosial">
       <a target="_blank" href="https://vk.com/kir9i_l2"
-        ><img src="@/assets/vk.png" alt=""
+        ><img src="@/assets/vk.png" alt="vk"
       /></a>
       <a target="_blank" href="https://www.instagram.com/kirilljora"
-        ><img src="@/assets/instagram.png" alt=""
+        ><img src="@/assets/instagram.png" alt="instagram"
       /></a>
       <a target="_blank" href="https://github.com/shestmintsev-kirill"
-        ><img src="@/assets/github.png" alt=""
+        ><img src="@/assets/github.png" alt="github"
       /></a>
       <a target="_blank" href="https://www.linkedin.com/in/KShestmintsev/"
-        ><img src="@/assets/linkedin.png" alt=""
+        ><img src="@/assets/linkedin.png" alt="linkedin"
       /></a>
     </div>
     <div class="section-contact-footer">
@@ -75,6 +75,7 @@ button {
   background: #070707;
   border-radius: 15px;
   transition: 0.3s;
+  cursor: pointer;
   &:focus {
     outline: none;
   }
