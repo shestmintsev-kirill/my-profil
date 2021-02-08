@@ -75,7 +75,6 @@ button {
   background: #070707;
   border-radius: 15px;
   transition: 0.3s;
-  cursor: pointer;
   &:focus {
     outline: none;
   }

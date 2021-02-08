@@ -10,7 +10,7 @@
           </h1>
         </div>
         <div @click="navClick" class="icon">
-          <img class="image-icon" src="@/assets/menu.png" alt="" />
+          <img class="image-icon" src="@/assets/menu.png" alt="menu" />
         </div>
         <div class="profession">
           <i18n path="HomePage.profession"><br slot="break"/></i18n>
