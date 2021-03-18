@@ -37,12 +37,7 @@
 
 <script>
 export default {
-  name: "PortfolioMovie",
-  mounted() {
-    if (localStorage.lang) {
-      this.$i18n.locale = JSON.parse(localStorage.lang);
-    }
-  }
+  name: "PortfolioMovie"
 };
 </script>
 

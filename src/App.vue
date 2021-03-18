@@ -12,6 +12,11 @@ export default {
   name: "App",
   components: {
     Loader
+  },
+  mounted() {
+    if (localStorage.lang) {
+      this.$i18n.locale = JSON.parse(localStorage.lang);
+    }
   }
 };
 </script>

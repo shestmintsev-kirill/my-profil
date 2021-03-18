@@ -58,7 +58,7 @@
       </div>
       <div class="section-partfolio-project">
         <div class="section-partfolio-project-promo">
-          <router-link to="/portfolio-store"
+          <router-link to="/portfolio-contact"
             ><img src="@/assets/contactBook.png" alt="contactBook"
           /></router-link>
           <div class="after">

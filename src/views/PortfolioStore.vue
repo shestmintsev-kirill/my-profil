@@ -41,12 +41,7 @@
 
 <script>
 export default {
-  name: "PortfolioStore",
-  mounted() {
-    if (localStorage.lang) {
-      this.$i18n.locale = JSON.parse(localStorage.lang);
-    }
-  }
+  name: "PortfolioStore"
 };
 </script>
 
