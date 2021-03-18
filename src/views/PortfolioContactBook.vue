@@ -4,31 +4,31 @@
       <div class="section-partfolio-title">
         <div class="section-partfolio-title-back">
           <router-link to="/"
-            ><img class="back" src="@/assets/back.png" alt="back"
+            ><img class="back" src="@/assets/back.png" alt="back-btn"
           /></router-link>
         </div>
         <div class="section-partfolio-title-text">
-          <span>{{ $t("PortfolioMovie.title") }}</span>
+          <span>{{ $t("PortfolioContactBook.title") }}</span>
           <div class="github">
             <a
               target="_blank"
-              href="https://github.com/shestmintsev-kirill/Movies-app"
-              ><img src="@/assets/github.png" alt="github"
+              href="https://github.com/shestmintsev-kirill/Contact-book"
+              ><img src="@/assets/github.png" alt=""
             /></a>
           </div>
         </div>
       </div>
       <div class="section-partfolio-project">
         <div class="section-partfolio-project-promo">
-          <img src="@/assets/movieHome.png" alt="movieHome" />
+          <img src="@/assets/contactBook.png" alt="contactBook" />
           <hr />
-          <img src="@/assets/movies.png" alt="movies" />
+          <img src="@/assets/contactBookSearch.png" alt="contactBookSearch" />
           <hr />
-          <img src="@/assets/movieInfo.png" alt="movieInfo" />
+          <img src="@/assets/contactBookAdd.png" alt="contactBookAdd" />
           <hr />
-          <img src="@/assets/movieSearch.png" alt="movieSearch" />
+          <img src="@/assets/contactBookSort.png" alt="contactBookSort" />
           <hr />
-          <img src="@/assets/moviePagination.png" alt="moviePagination" />
+          <img src="@/assets/contactBookEdit.png" alt="contactBookEdit" />
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: "PortfolioMovie",
+  name: "PortfolioContactBook",
   mounted() {
     if (localStorage.lang) {
       this.$i18n.locale = JSON.parse(localStorage.lang);
@@ -67,6 +67,7 @@ hr {
   padding: 10px;
   background-color: rgba(173, 173, 173, 0.6);
   position: fixed;
+  top: 10px;
   transition: 0.3s;
 
   &:hover {

@@ -7,7 +7,7 @@
       <div class="section-partfolio-project">
         <div class="section-partfolio-project-promo">
           <router-link to="/portfolio-store"
-            ><img src="@/assets/onlinestore.png" alt=""
+            ><img src="@/assets/onlinestore.png" alt="onlinestore"
           /></router-link>
           <div class="after">
             {{ $t("PortfolioPage.onlineStore") }}
@@ -32,7 +32,7 @@
       <div class="section-partfolio-project">
         <div class="section-partfolio-project-promo">
           <router-link to="/portfolio-movie"
-            ><img src="@/assets/movies.png" alt=""
+            ><img src="@/assets/movies.png" alt="movies"
           /></router-link>
           <div class="after">
             {{ $t("PortfolioPage.movieApp") }}
@@ -52,6 +52,33 @@
           <a
             target="_blank"
             href="https://shestmintsev-kirill.github.io/Movies-app/"
+            >GitHub Pages</a
+          >
+        </div>
+      </div>
+      <div class="section-partfolio-project">
+        <div class="section-partfolio-project-promo">
+          <router-link to="/portfolio-store"
+            ><img src="@/assets/contactBook.png" alt="contactBook"
+          /></router-link>
+          <div class="after">
+            {{ $t("PortfolioPage.contactBook") }}
+          </div>
+        </div>
+        <div class="section-partfolio-project-link">
+          <router-link to="/portfolio-contact">
+            {{ $t("PortfolioPage.link") }}</router-link
+          >
+        </div>
+        <div class="section-partfolio-project-title">
+          <a
+            target="_blank"
+            href="https://github.com/shestmintsev-kirill/Contact-book"
+            >Contact book > GitHub</a
+          >
+          <a
+            target="_blank"
+            href="https://shestmintsev-kirill.github.io/Contact-book/"
             >GitHub Pages</a
           >
         </div>

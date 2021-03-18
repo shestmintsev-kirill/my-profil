@@ -34,12 +34,17 @@
       <span
         >{{ $t("ContactPage.sosial") }}<br />
         <a target="_blank" href="https://vk.com/kir9i_l2"> VK </a>|
-        <!-- eslint-disable-next-line -->
-        <a target="_blank" href="https://www.instagram.com/kirilljora"> Instagram </a>|
-        <!-- eslint-disable-next-line -->
-        <a target="_blank" href="https://github.com/shestmintsev-kirill"> GitHub </a>|
-        <!-- eslint-disable-next-line -->
-        <a target="_blank" href="https://www.linkedin.com/in/KShestmintsev/"> LinkedIn </a>
+        <a target="_blank" href="https://www.instagram.com/kirilljora">
+          Instagram </a
+        >|
+
+        <a target="_blank" href="https://github.com/shestmintsev-kirill">
+          GitHub </a
+        >|
+
+        <a target="_blank" href="https://www.linkedin.com/in/KShestmintsev/">
+          LinkedIn
+        </a>
       </span>
     </div>
   </footer>

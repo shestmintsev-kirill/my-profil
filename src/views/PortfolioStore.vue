@@ -4,7 +4,7 @@
       <div class="section-partfolio-title">
         <div class="section-partfolio-title-back">
           <router-link to="/"
-            ><img class="back" src="@/assets/back.png" alt=""
+            ><img class="back" src="@/assets/back.png" alt="back"
           /></router-link>
         </div>
         <div class="section-partfolio-title-text">
@@ -13,34 +13,27 @@
             <a
               target="_blank"
               href="https://github.com/shestmintsev-kirill/vuefirstproject"
-              ><img src="@/assets/github.png" alt=""
+              ><img src="@/assets/github.png" alt="github"
             /></a>
           </div>
         </div>
       </div>
       <div class="section-partfolio-project">
         <div class="section-partfolio-project-promo">
-          <img src="@/assets/onlinestore.png" alt="img" />
+          <img src="@/assets/onlinestore.png" alt="onlinestore" />
           <hr />
-          <img src="@/assets/productList.png" alt="img" />
+          <img src="@/assets/productList.png" alt="productList" />
           <hr />
-          <img src="@/assets/productCard.png" alt="img" />
+          <img src="@/assets/productCard.png" alt="productCard" />
           <hr />
-          <img src="@/assets/productBuy.png" alt="img" />
+          <img src="@/assets/productBuy.png" alt="productBuy" />
           <hr />
-          <img src="@/assets/productOrder.png" alt="img" />
+          <img src="@/assets/productOrder.png" alt="productOrder" />
           <hr />
-          <img src="@/assets/productEdit.png" alt="img" />
+          <img src="@/assets/productEdit.png" alt="productEdit" />
           <hr />
-          <img src="@/assets/productNew.png" alt="img" />
+          <img src="@/assets/productNew.png" alt="productNew" />
         </div>
-        <!-- <div class="section-partfolio-project-title">
-          <a
-            target="_blank"
-            href="https://github.com/shestmintsev-kirill/vuefirstproject"
-            >Online Store - Homepage</a
-          >
-        </div> -->
       </div>
     </div>
   </section>
@@ -48,7 +41,12 @@
 
 <script>
 export default {
-  name: "PortfolioStore"
+  name: "PortfolioStore",
+  mounted() {
+    if (localStorage.lang) {
+      this.$i18n.locale = JSON.parse(localStorage.lang);
+    }
+  }
 };
 </script>
 

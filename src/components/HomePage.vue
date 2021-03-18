@@ -18,8 +18,6 @@
         <div class="lang">
           <a @click.prevent="setLocale('ru')" href="/">RU</a> |
           <a @click.prevent="setLocale('en')" href="/">ENG</a>
-          <!-- <router-link to="/ru">RU</router-link> |
-          <router-link to="/">ENG</router-link> -->
         </div>
       </div>
       <div class="section-header-name-photo">
@@ -52,12 +50,17 @@ export default {
     },
     setLocale(locale) {
       this.$i18n.locale = locale;
+      localStorage.lang = JSON.stringify(locale);
+    }
+  },
+  mounted() {
+    if (localStorage.lang) {
+      this.$i18n.locale = JSON.parse(localStorage.lang);
     }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/scss/style.scss";
 * {
