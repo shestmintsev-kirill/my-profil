@@ -10,7 +10,7 @@ export const i18n = new VueI18n({
     en: {
       HomePage: {
         name: "Kirill{break}Shestmintsev",
-        profession: "Frontend developer{break}22 years old, Moscow"
+        profession: "Frontend developer{break}23 years old, Moscow"
       },
       AboutPage: {
         title: "About me",
@@ -69,7 +69,7 @@ export const i18n = new VueI18n({
     ru: {
       HomePage: {
         name: "Кирилл {break} Шестминцев",
-        profession: "Frontend разработчик{break}22 года, Москва"
+        profession: "Frontend разработчик{break}23 года, Москва"
       },
       AboutPage: {
         title: "Обо мне",

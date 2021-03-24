@@ -24,7 +24,7 @@
           <hr />
           <img src="@/assets/contactBookSearch.png" alt="contactBookSearch" />
           <hr />
-          <img src="/assets/contactBookAdd.png" alt="contactBookAdd" />
+          <img src="@/assets/contactBookAdd.png" alt="contactBookAdd" />
           <hr />
           <img src="@/assets/contactBookSort.png" alt="contactBookSort" />
           <hr />

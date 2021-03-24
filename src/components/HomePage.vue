@@ -52,11 +52,6 @@ export default {
       this.$i18n.locale = locale;
       localStorage.lang = JSON.stringify(locale);
     }
-  },
-  mounted() {
-    if (localStorage.lang) {
-      this.$i18n.locale = JSON.parse(localStorage.lang);
-    }
   }
 };
 </script>
