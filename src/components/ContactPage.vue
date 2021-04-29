@@ -5,7 +5,7 @@
     </div>
     <div class="section-contact-text">
       <span>{{ $t("ContactPage.description") }}</span>
-      <p>+7-978-599-56-22</p>
+      <p>+7-999-967-96-14</p>
       <p>1kirillmihail1@gmail.com</p>
     </div>
     <div class="section-contact-btn">
