@@ -1,47 +1,48 @@
 <template>
-  <section class="section-outer section-partfolio">
-    <div class="section-inner">
+  <transition name="modal">
+    <div class="section-outer section-inner">
       <div class="section-partfolio-title">
         <div class="section-partfolio-title-back">
-          <router-link to="/"
+          <a @click="$emit('close-modal')"
             ><img class="back" src="@/assets/back.png" alt="back"
-          /></router-link>
+          /></a>
         </div>
         <div class="section-partfolio-title-text">
-          <span>{{ $t("PortfolioStore.title") }}</span>
+          <span>{{ $t(portfolio.title) }}</span>
           <div class="github">
-            <a
-              target="_blank"
-              href="https://github.com/shestmintsev-kirill/vuefirstproject"
+            <a target="_blank" :href="portfolio.link"
               ><img src="@/assets/github.png" alt="github"
             /></a>
           </div>
         </div>
       </div>
-      <div class="section-partfolio-project">
+      <div
+        v-for="img in portfolio.images"
+        :key="img"
+        class="section-partfolio-project"
+      >
         <div class="section-partfolio-project-promo">
-          <img src="@/assets/onlinestore.png" alt="onlinestore" />
+          <img :src="getImage(`${img}`)" />
           <hr />
-          <img src="@/assets/productList.png" alt="productList" />
-          <hr />
-          <img src="@/assets/productCard.png" alt="productCard" />
-          <hr />
-          <img src="@/assets/productBuy.png" alt="productBuy" />
-          <hr />
-          <img src="@/assets/productOrder.png" alt="productOrder" />
-          <hr />
-          <img src="@/assets/productEdit.png" alt="productEdit" />
-          <hr />
-          <img src="@/assets/productNew.png" alt="productNew" />
         </div>
       </div>
     </div>
-  </section>
+  </transition>
 </template>
 
 <script>
 export default {
-  name: "PortfolioStore"
+  name: "Portfolio",
+  props: {
+    portfolio: {
+      type: Object
+    }
+  },
+  methods: {
+    getImage(img) {
+      return require("@/assets/" + img);
+    }
+  }
 };
 </script>
 
@@ -52,11 +53,15 @@ export default {
   @include font-ru;
 }
 
+::-webkit-scrollbar-thumb {
+  background-color: #5a5b8a !important;
+}
+
 hr {
   border: 0;
   background: rgba(117, 117, 117, 0.3);
   height: 2px;
-  margin: 30px;
+  margin: 20px;
 }
 
 .back {
@@ -67,6 +72,7 @@ hr {
   background-color: rgba(173, 173, 173, 0.6);
   position: fixed;
   transition: 0.3s;
+  cursor: pointer;
 
   &:hover {
     background-color: rgba(139, 139, 139, 0.8);
@@ -78,6 +84,7 @@ img:not(.back) {
   transition: 0.3s;
   border-radius: 5px;
   border: 1px solid rgba(105, 105, 105, 0.2);
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0px 0 10px 4px rgba(0, 2, 3, 0.2);
@@ -85,15 +92,20 @@ img:not(.back) {
 }
 
 .section-inner {
-  max-width: 945px;
-  margin-left: auto;
-  margin-right: auto;
+  position: fixed;
+  z-index: 100;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(235, 235, 235, 1);
+  transition: all 0.3s ease;
+  animation: opacity 0.3s linear;
 }
 
 .section-partfolio {
-  background: #eeeeee;
-  padding-bottom: 50px;
-
   &-title {
     padding-top: 50px;
     display: flex;
@@ -122,6 +134,37 @@ img:not(.back) {
         flex: auto;
       }
     }
+  }
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  ::-webkit-scrollbar {
+    width: 5px !important;
   }
 }
 </style>

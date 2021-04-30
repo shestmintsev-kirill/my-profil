@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav @scroll.passive="scroll" class="nav">
     <ul v-scroll-spy-active v-scroll-spy-link>
       <li v-for="link in links" :key="link">
         <a>{{ $t(link) }}</a>

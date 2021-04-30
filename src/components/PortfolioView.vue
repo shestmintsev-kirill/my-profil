@@ -1,80 +1,48 @@
 <template>
-  <section class="section-outer section-partfolio">
-    <PortfolioView :portfolio="portfolio" @show-modal="showModal" />
-    <Portfolio v-if="show" :portfolio="show" @close-modal="closeModal" />
-  </section>
+  <div>
+    <div class="section-partfolio-title">
+      <span>{{ $t("PortfolioPage.title") }}</span>
+    </div>
+    <div v-for="(project, i) in portfolio" :key="i" class="section-inner">
+      <div class="section-partfolio-project">
+        <div class="section-partfolio-project-promo">
+          <a
+            ><img
+              @click.prevent="$emit('show-modal', project)"
+              :src="getImage(`${project.imgView}`)"
+              alt="onlinestore"
+          /></a>
+          <div class="after">
+            {{ $t(project.description) }}
+          </div>
+        </div>
+        <div class="section-partfolio-project-link">
+          <a @click.prevent="$emit('show-modal', project)">
+            {{ $t("PortfolioPage.link") }}
+          </a>
+        </div>
+        <div class="section-partfolio-project-title">
+          <a target="_blank" :href="project.link">{{ project.gitHub }}</a>
+          <a target="_blank" :href="project.linkToDeploy">{{
+            project.deploy
+          }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import Portfolio from "./Portfolio";
-import PortfolioView from "./PortfolioView.vue";
 export default {
-  components: { PortfolioView, Portfolio },
-  name: "PartfolioPage",
-  data: () => ({
-    show: null,
+  name: "PortfolioView",
+  props: {
     portfolio: {
-      store: {
-        imgView: "onlinestore.png",
-        description: "PortfolioPage.onlineStore",
-        title: "PortfolioStore.title",
-        link: "https://github.com/shestmintsev-kirill/vuefirstproject",
-        linkToDeploy: "https://onlinestore2-63245.firebaseapp.com/",
-        deploy: "Firebase",
-        gitHub: "Online Store > GitHub",
-        modal: "portfolio.store",
-        images: [
-          "onlinestore.png",
-          "productList.png",
-          "productCard.png",
-          "productBuy.png",
-          "productOrder.png",
-          "productEdit.png",
-          "productNew.png"
-        ]
-      },
-      movie: {
-        imgView: "movies.png",
-        description: "PortfolioPage.movieApp",
-        title: "PortfolioMovie.title",
-        link: "https://github.com/shestmintsev-kirill/Movies-app",
-        linkToDeploy: "https://shestmintsev-kirill.github.io/Movies-app/",
-        deploy: "GitHub Pages",
-        gitHub: "Movies Top > GitHub",
-        modal: "portfolio.movie",
-        images: [
-          "movieHome.png",
-          "movies.png",
-          "movieInfo.png",
-          "movieSearch.png",
-          "moviePagination.png"
-        ]
-      },
-      contact: {
-        imgView: "contactBook.png",
-        description: "PortfolioPage.contactBook",
-        title: "PortfolioContactBook.title",
-        link: "https://github.com/shestmintsev-kirill/Contact-book",
-        linkToDeploy: "https://shestmintsev-kirill.github.io/Contact-book/",
-        deploy: "GitHub Pages",
-        gitHub: "Contact book > GitHub",
-        modal: "portfolio.contact",
-        images: [
-          "contactBook.png",
-          "contactBookSearch.png",
-          "contactBookAdd.png",
-          "contactBookSort.png",
-          "contactBookEdit.png"
-        ]
-      }
+      type: Object
     }
-  }),
+  },
   methods: {
-    showModal(e) {
-      this.show = e;
-    },
-    closeModal() {
-      this.show = null;
+    getImage(img) {
+      return require("@/assets/" + img);
     }
   }
 };
@@ -122,6 +90,7 @@ img {
   transition: 0.3s;
   border-radius: 5px;
   transition: all 0.5s;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0px 0 10px 4px rgba(0, 2, 3, 0.2);
@@ -135,7 +104,6 @@ img {
 }
 .section-partfolio {
   background: #f6f6f6;
-  overflow: hidden;
 
   @media (max-width: $screen-xs-max) {
     padding-top: 60px;
@@ -186,6 +154,7 @@ img {
       display: flex;
       justify-content: flex-end;
       margin-top: -30px;
+      cursor: pointer;
       @media (max-width: $screen-xs-max) {
         margin-bottom: 10px;
         a {

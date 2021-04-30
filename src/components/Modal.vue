@@ -16,42 +16,44 @@
                   name="name"
                   type="text"
                   :placeholder="$t('Modal.name')"
-                  v-model="msg.name"
+                  v-model="name"
                 />
                 <input
                   class="input-Email"
                   type="email"
                   name="_replyto"
                   :placeholder="$t('Modal.email')"
-                  v-model="msg.email"
+                  v-model="email"
                   required
                 />
                 <input
                   class="input-Tel"
                   name="tel"
                   :placeholder="$t('Modal.tel')"
-                  v-model="msg.tel"
+                  v-model="tel"
                 />
                 <textarea
                   class="input-Message"
                   type="text"
                   name="message"
                   :placeholder="$t('Modal.message')"
-                  v-model="msg.message"
+                  v-model="message"
                   required
                 />
                 <div class="modal-footer">
                   <button
                     type="submit"
                     value="Send"
+                    :class="{ disabledBtn: isDisabled }"
+                    :disabled="isDisabled"
                     class="modal-default-button send"
-                    @click="send"
+                    @click.stop="send"
                   >
                     {{ $t("Modal.send") }}
                   </button>
                   <button
                     class="modal-default-button close"
-                    @click="$emit('close')"
+                    @click.stop="$emit('close')"
                   >
                     {{ $t("Modal.close") }}
                   </button>
@@ -69,18 +71,20 @@
 export default {
   name: "Modal",
   data: () => ({
-    msg: {
-      name: null,
-      email: null,
-      tel: null,
-      message: null
-    }
+    name: null,
+    email: null,
+    tel: null,
+    message: null,
+    isDisabled: true
   }),
   methods: {
-    send() {
-      if ((this.msg.email, this.msg.message)) {
-        this.$emit("close");
-      }
+    confirm(e, num) {
+      e.length > num ? (this.isDisabled = false) : (this.isDisabled = true);
+    }
+  },
+  watch: {
+    message(target) {
+      this.confirm(target, 3);
     }
   }
 };
@@ -102,6 +106,13 @@ textarea {
   max-height: 200px;
   overflow: auto;
   resize: none;
+}
+
+.disabledBtn {
+  background: rgb(200, 200, 200) !important;
+  &:hover {
+    box-shadow: none !important;
+  }
 }
 
 input,

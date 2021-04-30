@@ -1,17 +1,19 @@
 <template>
   <div id="app">
     <Loader />
-    <router-view />
+    <Home />
   </div>
 </template>
 
 <script>
 import Loader from "./components/Loader.vue";
+import Home from "./views/Home.vue";
 
 export default {
   name: "App",
   components: {
-    Loader
+    Loader,
+    Home
   },
   mounted() {
     if (localStorage.lang) {
