@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div class="section-outer section-inner">
+    <div class="section-outer section-content">
       <div class="section-partfolio-title">
         <div class="section-partfolio-title-back">
           <a @click="$emit('close-modal')"
@@ -91,7 +91,7 @@ img:not(.back) {
   }
 }
 
-.section-inner {
+.section-content {
   position: fixed;
   z-index: 100;
   overflow-x: hidden;
