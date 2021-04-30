@@ -135,6 +135,11 @@ img:not(.back) {
       }
     }
   }
+
+  &-project {
+    max-width: 945px;
+    margin: 0 auto;
+  }
 }
 
 .modal-enter {
