@@ -15,7 +15,7 @@ export const i18n = new VueI18n({
       AboutPage: {
         title: "About me",
         about:
-          "Hi, I'm Kirill – Junior Frontend developer from Moscow. I'm interestedin web development and everything connected with it.{break}{break}I finished courses on Udemy platform ",
+          "Hi, I'm Kirill – Frontend developer from Moscow. I'm interestedin web development and everything connected with it.{break}{break}I finished courses on Udemy platform ",
         aboutNext: "I am ready to implement projects with a cool team"
       },
       SkillsPage: {
@@ -74,7 +74,7 @@ export const i18n = new VueI18n({
       AboutPage: {
         title: "Обо мне",
         about:
-          "Привет, Я Кирилл – Junior Frontend разработчик из Москвы. Я интересуюсь Web-разработкой и всем, что с этим связано{break}{break}Я учусь на курсах, платформы Udemy ",
+          "Привет, Я Кирилл – Frontend разработчик из Москвы. Я интересуюсь Web-разработкой и всем, что с этим связано{break}{break}Я учусь на курсах, платформы Udemy ",
         aboutNext: "Готов реализовывать проекты с крутой командой"
       },
       SkillsPage: {
