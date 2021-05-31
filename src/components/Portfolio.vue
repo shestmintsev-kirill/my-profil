@@ -1,11 +1,17 @@
 <template>
   <transition name="modal">
-    <div @click.self="$emit('close-modal')" class="modal-mask">
-      <div @click.self="$emit('close-modal')" class="modal-wrapper">
+    <div
+      @click.self="$emit('close-modal'), enableScrolling()"
+      class="modal-mask"
+    >
+      <div
+        @click.self="$emit('close-modal'), enableScrolling()"
+        class="modal-wrapper"
+      >
         <div class="section-outer modal-container">
           <div class="section-partfolio-title">
             <div class="section-partfolio-title-back">
-              <a @click="$emit('close-modal')"
+              <a @click="$emit('close-modal'), enableScrolling()"
                 ><img class="back" src="@/assets/back.png" alt="back"
               /></a>
             </div>
@@ -58,6 +64,7 @@ export default {
   }),
   mounted() {
     this.arrowCarouselWidth();
+    this.disableScrolling();
   },
   methods: {
     getImage(img) {
@@ -77,6 +84,17 @@ export default {
       } else {
         this.settings.arrows = true;
       }
+    },
+    disableScrolling() {
+      var x = window.scrollX;
+      var y = window.scrollY;
+      window.onscroll = function() {
+        window.scrollTo(x, y);
+      };
+    },
+
+    enableScrolling() {
+      window.onscroll = function() {};
     }
   }
 };
