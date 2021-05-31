@@ -104,10 +104,15 @@ button {
 
   &-text {
     text-align: center;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &-btn {
     margin-bottom: 60px;
+    margin-top: 20px;
   }
 
   &-sosial {

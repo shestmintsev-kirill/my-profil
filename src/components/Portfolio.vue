@@ -1,29 +1,30 @@
 <template>
   <transition name="modal">
-    <div class="section-outer section-content">
-      <div class="section-partfolio-title">
-        <div class="section-partfolio-title-back">
-          <a @click="$emit('close-modal')"
-            ><img class="back" src="@/assets/back.png" alt="back"
-          /></a>
-        </div>
-        <div class="section-partfolio-title-text">
-          <span>{{ $t(portfolio.title) }}</span>
-          <div class="github">
-            <a target="_blank" :href="portfolio.link"
-              ><img src="@/assets/github.png" alt="github"
-            /></a>
+    <div @click.self="$emit('close-modal')" class="modal-mask">
+      <div @click.self="$emit('close-modal')" class="modal-wrapper">
+        <div class="section-outer modal-container">
+          <div class="section-partfolio-title">
+            <div class="section-partfolio-title-back">
+              <a @click="$emit('close-modal')"
+                ><img class="back" src="@/assets/back.png" alt="back"
+              /></a>
+            </div>
+            <div class="section-partfolio-title-text">
+              <span>{{ $t(portfolio.title) }}</span>
+              <div class="github">
+                <a target="_blank" :href="portfolio.link"
+                  ><img src="@/assets/github.png" alt="github"
+                /></a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div
-        v-for="img in portfolio.images"
-        :key="img"
-        class="section-partfolio-project"
-      >
-        <div class="section-partfolio-project-promo">
-          <img :src="getImage(`${img}`)" />
-          <hr />
+          <div class="caroulsel">
+            <VueSlickCarousel v-bind="settings">
+              <div v-for="(item, i) in portfolio.images" :key="i">
+                <img class="wrap" :src="getImage(`${item}`)" />
+              </div>
+            </VueSlickCarousel>
+          </div>
         </div>
       </div>
     </div>
@@ -31,16 +32,51 @@
 </template>
 
 <script>
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
 export default {
   name: "Portfolio",
+  components: {
+    VueSlickCarousel
+  },
   props: {
     portfolio: {
-      type: Object
+      type: Object,
+      default: () => ({})
     }
+  },
+  data: () => ({
+    settings: {
+      arrows: true,
+      dots: true,
+      infinite: true,
+      slidesToScroll: 1,
+      rtl: true
+    }
+  }),
+  mounted() {
+    this.arrowCarouselWidth();
   },
   methods: {
     getImage(img) {
       return require("@/assets/" + img);
+    },
+    prevSlide() {
+      if (this.currentSlide > 0) {
+        this.currentSlide--;
+      }
+    },
+    nextSlide() {
+      this.currentSlide++;
+    },
+    arrowCarouselWidth() {
+      if (document.documentElement.clientWidth < 566) {
+        this.settings.arrows = false;
+      } else {
+        this.settings.arrows = true;
+      }
     }
   }
 };
@@ -53,15 +89,48 @@ export default {
   @include font-ru;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #5a5b8a !important;
+.caroulsel {
+  width: 100%;
+  margin-bottom: 10px;
+
+  .wrap {
+    width: 100%;
+    height: auto;
+  }
 }
 
-hr {
-  border: 0;
-  background: rgba(117, 117, 117, 0.3);
-  height: 2px;
-  margin: 20px;
+.modal-container {
+  margin: 0px auto;
+  max-width: 945px;
+  padding: 20px 30px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  animation: opacity 0.3s linear;
+
+  @media (max-width: $screen-xs-max) {
+    padding: 20px 7px;
+  }
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.modal-wrapper {
+  width: 100%;
+  padding: 0 20px;
 }
 
 .back {
@@ -70,63 +139,46 @@ hr {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   padding: 10px;
   background-color: rgba(173, 173, 173, 0.6);
-  position: fixed;
   transition: 0.3s;
   cursor: pointer;
+
+  @media (max-width: $screen-sm-max) {
+    width: 30px;
+  }
 
   &:hover {
     background-color: rgba(139, 139, 139, 0.8);
   }
 }
 
-img:not(.back) {
-  width: 100%;
-  transition: 0.3s;
-  border-radius: 5px;
-  border: 1px solid rgba(105, 105, 105, 0.2);
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0px 0 10px 4px rgba(0, 2, 3, 0.2);
-  }
-}
-
-.section-content {
-  position: fixed;
-  z-index: 100;
-  overflow-x: hidden;
-  overflow-y: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(235, 235, 235, 1);
-  transition: all 0.3s ease;
-  animation: opacity 0.3s linear;
-}
-
 .section-partfolio {
   &-title {
-    padding-top: 50px;
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 
     &-text {
       display: flex;
       width: 100%;
       text-align: center;
 
+      @media (max-width: $screen-sm-max) {
+        font-size: 16px;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 12px;
+      }
+
       .github {
         width: 35px;
-        img {
-          border: none;
-
-          &:hover {
-            box-shadow: none;
-            transform: scale(1.1);
-          }
+        transition: 0.3s;
+        &:hover {
+          transform: scale(1.1);
         }
       }
 
@@ -135,20 +187,15 @@ img:not(.back) {
       }
     }
   }
-
-  &-project {
-    max-width: 945px;
-    margin: 0 auto;
-  }
 }
 
-.modal-enter {
+.modal-enter .modal-container {
   opacity: 0;
 }
 
-.modal-leave-active {
+.modal-leave-active .modal-container {
   opacity: 0;
-  transform: scale(0.1);
+  transform: scale(1.5);
 }
 
 @keyframes opacity {
@@ -164,12 +211,6 @@ img:not(.back) {
 
   100% {
     opacity: 1;
-  }
-}
-
-@media (max-width: $screen-sm-max) {
-  ::-webkit-scrollbar {
-    width: 5px !important;
   }
 }
 </style>
