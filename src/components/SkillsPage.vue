@@ -98,7 +98,7 @@ export default {
     padding-top: 40px;
 
     .transform {
-      margin-bottom: 60px;
+      margin-bottom: 30px;
     }
     &-text {
       margin-top: 40px;
@@ -107,6 +107,11 @@ export default {
       margin-top: 40px;
       flex-direction: column;
       align-items: center;
+
+      img {
+        width: 90px;
+        height: 90px;
+      }
     }
   }
 
