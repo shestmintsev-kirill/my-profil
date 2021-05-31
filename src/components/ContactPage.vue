@@ -17,34 +17,28 @@
       </Modal>
     </div>
     <div class="section-contact-sosial">
-      <a target="_blank" href="https://vk.com/kir9i_l2"
-        ><img src="@/assets/vk.png" alt="vk"
-      /></a>
-      <a target="_blank" href="https://www.instagram.com/kirilljora"
-        ><img src="@/assets/instagram.png" alt="instagram"
-      /></a>
-      <a target="_blank" href="https://github.com/shestmintsev-kirill"
-        ><img src="@/assets/github.png" alt="github"
-      /></a>
-      <a target="_blank" href="https://www.linkedin.com/in/KShestmintsev/"
-        ><img src="@/assets/linkedin.png" alt="linkedin"
+      <a
+        v-for="item in sosial"
+        :key="item.title"
+        target="_blank"
+        :href="item.link"
+        ><img :src="getImage(`${item.icon}`)" alt="sosial"
       /></a>
     </div>
     <div class="section-contact-footer">
       <span
         >{{ $t("ContactPage.sosial") }}<br />
-        <a target="_blank" href="https://vk.com/kir9i_l2"> VK </a>|
-        <a target="_blank" href="https://www.instagram.com/kirilljora">
-          Instagram </a
-        >|
-
-        <a target="_blank" href="https://github.com/shestmintsev-kirill">
-          GitHub </a
-        >|
-
-        <a target="_blank" href="https://www.linkedin.com/in/KShestmintsev/">
-          LinkedIn
-        </a>
+        <div>
+          <a
+            v-for="item in sosial"
+            :key="item.link"
+            target="_blank"
+            :href="item.link"
+            class="section-contact-footer-target"
+          >
+            {{ item.title }}
+          </a>
+        </div>
       </span>
     </div>
   </footer>
@@ -59,8 +53,35 @@ export default {
     Modal
   },
   data: () => ({
-    showModal: false
-  })
+    showModal: false,
+    sosial: {
+      vk: {
+        title: "VK",
+        link: "https://vk.com/kir9i_l2",
+        icon: "vk.png"
+      },
+      instagram: {
+        title: "Instagram",
+        link: "https://www.instagram.com/kirilljora",
+        icon: "instagram.png"
+      },
+      github: {
+        title: "GitHub",
+        link: "https://github.com/shestmintsev-kirill",
+        icon: "github.png"
+      },
+      linkedin: {
+        title: "LinkedIn",
+        link: "https://www.linkedin.com/in/KShestmintsev/",
+        icon: "linkedin.png"
+      }
+    }
+  }),
+  methods: {
+    getImage(img) {
+      return require("@/assets/" + img);
+    }
+  }
 };
 </script>
 
@@ -112,7 +133,7 @@ button {
 
   &-btn {
     margin-bottom: 60px;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   &-sosial {
@@ -127,6 +148,10 @@ button {
     color: rgba(130, 130, 130, 1);
     text-align: center;
     margin-bottom: 70px;
+
+    &-target + &-target {
+      margin-left: 10px;
+    }
   }
 
   @media (max-width: $screen-sm-max) {

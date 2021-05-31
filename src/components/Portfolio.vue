@@ -16,7 +16,7 @@
               /></a>
             </div>
             <div class="section-partfolio-title-text">
-              <span>{{ $t(portfolio.title) }}</span>
+              <span class="title-wrapper">{{ $t(portfolio.title) }}</span>
               <div class="github">
                 <a target="_blank" :href="portfolio.link"
                   ><img src="@/assets/github.png" alt="github"
@@ -200,7 +200,7 @@ export default {
         }
       }
 
-      span {
+      .title-wrapper {
         flex: auto;
       }
     }

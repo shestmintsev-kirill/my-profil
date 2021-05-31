@@ -10,7 +10,7 @@
       </div>
       <div class="mobile-lang">
         <div class="close">
-          <img @click="$emit('back')" src="@/assets/close.png" alt="" />
+          <img @click="$emit('back')" src="@/assets/close.png" alt="close" />
         </div>
         <div @click="$emit('unvisible')" class="link">
           <a @click.prevent="setLocale('ru')" href="/">RU</a> |

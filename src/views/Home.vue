@@ -27,10 +27,15 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "@/assets/scss/style.scss";
 * {
   @include font-eng;
   @include font-ru;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(129, 129, 129) !important;
 }
 </style>

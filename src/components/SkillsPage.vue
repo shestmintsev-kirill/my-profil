@@ -7,36 +7,16 @@
       <span>{{ $t("SkillsPage.description") }}</span>
     </div>
     <div class="section-skills-content">
-      <div class="section-skills-content-html transform">
-        <div class="section-skills-content-html-logo">
-          <img src="@/assets/html5.png" alt="" />
-        </div>
-        <div class="section-skills-content-html-description text-center ">
-          <span>HTML5</span>
-        </div>
-      </div>
-      <div class="section-skills-content-css transform">
-        <div class="section-skills-content-css-logo">
-          <img src="@/assets/css-3.png" alt="" />
-        </div>
-        <div class="section-skills-content-css-description text-center ">
-          <span>CSS3</span>
-        </div>
-      </div>
-      <div class="section-skills-content-js transform">
-        <div class="section-skills-content-js-logo">
-          <img src="@/assets/javascript.png" alt="" />
-        </div>
-        <div class="section-skills-content-js-description text-center ">
-          <span>JavaScript</span>
-        </div>
-      </div>
-      <div class="section-skills-content-vue transform">
+      <div
+        v-for="item in skillsList"
+        :key="item.title"
+        class="section-skills-content-vue transform"
+      >
         <div class="section-skills-content-vue-logo">
-          <img src="@/assets/vue.png" alt="" />
+          <img :src="getImage(`${item.img}`)" alt="skill" />
         </div>
-        <div class="section-skills-content-vue-description text-center ">
-          <span>Vue.js</span>
+        <div class="section-skills-content-vue-description text-center">
+          <span>{{ item.title }}</span>
         </div>
       </div>
     </div>
@@ -45,7 +25,32 @@
 
 <script>
 export default {
-  name: "SkillsPage"
+  name: "SkillsPage",
+  data: () => ({
+    skillsList: {
+      html: {
+        title: "HTML5",
+        img: "html5.png"
+      },
+      css: {
+        title: "CSS3",
+        img: "css-3.png"
+      },
+      js: {
+        title: "JavaScript",
+        img: "javascript.png"
+      },
+      vuejs: {
+        title: "Vue.js",
+        img: "vue.png"
+      }
+    }
+  }),
+  methods: {
+    getImage(img) {
+      return require("@/assets/" + img);
+    }
+  }
 };
 </script>
 
