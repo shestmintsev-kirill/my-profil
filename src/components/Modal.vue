@@ -15,6 +15,7 @@
             <slot name="body">
               <form action="https://formspree.io/f/mnqowzgd" method="POST">
                 <input
+                  ref="input"
                   class="input-Name"
                   name="name"
                   type="text"
@@ -36,7 +37,6 @@
                   v-model="tel"
                 />
                 <textarea
-                  ref="input"
                   class="input-Message"
                   type="text"
                   name="message"
