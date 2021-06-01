@@ -9,16 +9,13 @@
       </i18n>
       <span>
         <a
+          class="section-about-description-link"
+          v-for="certificate in certificates"
+          :key="certificate.title"
           target="_blank"
-          href="https://www.udemy.com/certificate/UC-53816070-96d5-417b-822d-7b09d970e031/"
-          >JS and Vue</a
+          :href="certificate.link"
+          >{{ certificate.title }}</a
         >
-        |
-        <a
-          target="_blank"
-          href="https://www.udemy.com/certificate/UC-13faeecc-8310-4274-b173-fadfa02956d0/"
-          >Vue project
-        </a>
         <br /><br />
         {{ $t("AboutPage.aboutNext") }}
       </span>
@@ -28,15 +25,26 @@
 
 <script>
 export default {
-  name: "AboutPage"
+  name: "AboutPage",
+  data: () => ({
+    certificates: {
+      first: {
+        title: "JS and Vue |",
+        lilnk:
+          "https://www.udemy.com/certificate/UC-53816070-96d5-417b-822d-7b09d970e031/"
+      },
+      second: {
+        title: " Vue project",
+        lilnk:
+          "https://www.udemy.com/certificate/UC-13faeecc-8310-4274-b173-fadfa02956d0/"
+      }
+    }
+  })
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/scss/style.scss";
-a {
-  color: #252525;
-}
 
 .section-about {
   background: #f6f6f6;
@@ -58,6 +66,11 @@ a {
     margin-bottom: 100px;
     text-align: center;
     font-weight: 500;
+
+    &-link {
+      cursor: pointer;
+      color: #252525;
+    }
   }
   @media (max-width: $screen-xs-max) {
     &-description {
