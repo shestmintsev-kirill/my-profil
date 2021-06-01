@@ -36,6 +36,7 @@
                   v-model="tel"
                 />
                 <textarea
+                  ref="input"
                   class="input-Message"
                   type="text"
                   name="message"
@@ -82,6 +83,7 @@ export default {
   }),
   mounted() {
     this.disableScrolling();
+    this.focusInput();
   },
   methods: {
     disableScrolling() {
@@ -97,6 +99,9 @@ export default {
     },
     confirm(e, num) {
       e.length > num ? (this.isDisabled = false) : (this.isDisabled = true);
+    },
+    focusInput() {
+      this.$refs.input.focus();
     }
   },
   watch: {
