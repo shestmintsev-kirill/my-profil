@@ -24,10 +24,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/style.scss";
-@import "normalize-scss";
-@include normalize();
-
 * {
   box-sizing: border-box;
 }

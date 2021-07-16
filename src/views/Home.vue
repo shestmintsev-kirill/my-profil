@@ -29,6 +29,9 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/style.scss";
+@import "normalize-scss";
+@include normalize();
+
 * {
   @include font-eng;
   @include font-ru;
