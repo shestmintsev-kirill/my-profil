@@ -5,13 +5,11 @@
     </div>
     <div v-for="(project, i) in portfolio" :key="i" class="section-inner">
       <div class="section-partfolio-project">
-        <div class="section-partfolio-project-promo">
-          <a
-            ><img
-              @click.prevent="$emit('show-modal', project)"
-              :src="getImage(`${project.imgView}`)"
-              alt="onlinestore"
-          /></a>
+        <div
+          @click.prevent="$emit('show-modal', project)"
+          class="section-partfolio-project-promo"
+        >
+          <a><img :src="getImage(`${project.imgView}`)" alt="onlinestore"/></a>
           <div class="after">
             {{ $t(project.description) }}
           </div>
@@ -22,7 +20,9 @@
           </a>
         </div>
         <div class="section-partfolio-project-title">
-          <a target="_blank" :href="project.link">{{ project.gitHub }}</a>
+          <a v-if="project.link" target="_blank" :href="project.link">{{
+            project.gitHub
+          }}</a>
           <a target="_blank" :href="project.linkToDeploy">{{
             project.deploy
           }}</a>

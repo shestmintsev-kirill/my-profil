@@ -50,6 +50,20 @@ export default {
           "moviePagination.png"
         ]
       },
+      ashestmintseva: {
+        imgView: "ashestmintseva_1.png",
+        description: "PortfolioPage.ashestmintseva",
+        title: "Portfolioashestmintseva.title",
+        link: "",
+        linkToDeploy: "https://www.ashestmintseva.ru/",
+        deploy: "ashestmintseva.ru",
+        modal: "portfolio.contact",
+        images: [
+          "ashestmintseva_3.png",
+          "ashestmintseva_2.png",
+          "ashestmintseva_1.png"
+        ]
+      },
       contact: {
         imgView: "contactBook.png",
         description: "PortfolioPage.contactBook",

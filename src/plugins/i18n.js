@@ -30,7 +30,8 @@ export const i18n = new VueI18n({
         movieApp:
           "Project - Movies Top 250 using Vue-router, Vuex and Bootstrap-vue",
         contactBook:
-          "Project - Contact book using Vue-router (dynamic route matching), Vuex, LocalStorage"
+          "Project - Contact book using Vue-router (dynamic route matching), Vuex, LocalStorage",
+        ashestmintseva: "Personal site"
       },
       ContactPage: {
         title: "Contacts",
@@ -64,6 +65,9 @@ export const i18n = new VueI18n({
       PortfolioContactBook: {
         title:
           "Contact book using Vue-router (dynamic route matching), Vuex, LocalStorage"
+      },
+      Portfolioashestmintseva: {
+        title: "Personal website, analytics, investments"
       }
     },
     ru: {
@@ -89,7 +93,8 @@ export const i18n = new VueI18n({
         movieApp:
           "Топ 250 фильмов с использованием Vue-router, Vuex и Bootstrap-vue",
         contactBook:
-          "Контактная книга с использованием Vue-router (динамические пути), Vuex, LocalStorage"
+          "Контактная книга с использованием Vue-router (динамические пути), Vuex, LocalStorage",
+        ashestmintseva: "Личный сайт"
       },
       ContactPage: {
         title: "Контакты",
@@ -125,6 +130,9 @@ export const i18n = new VueI18n({
       PortfolioContactBook: {
         title:
           "Контактная книга с использованием Vue-router (динамические пути), Vuex, LocalStorage"
+      },
+      Portfolioashestmintseva: {
+        title: "Личный сайт, аналитика, инвестиции"
       }
     }
   }

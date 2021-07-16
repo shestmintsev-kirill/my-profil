@@ -87,15 +87,15 @@ export default {
   },
   methods: {
     disableScrolling() {
-      var x = window.scrollX;
-      var y = window.scrollY;
-      window.onscroll = function() {
+      let x = window.scrollX;
+      let y = window.scrollY;
+      window.onscroll = () => {
         window.scrollTo(x, y);
       };
     },
 
     enableScrolling() {
-      window.onscroll = function() {};
+      window.onscroll = () => {};
     },
     confirm(e, num) {
       e.length > num ? (this.isDisabled = false) : (this.isDisabled = true);

@@ -5,8 +5,8 @@
     </div>
     <div class="section-contact-text">
       <span>{{ $t("ContactPage.description") }}</span>
-      <p>+7-999-967-96-14</p>
-      <p>1kirillmihail1@gmail.com</p>
+      <a href="tel:+79999679614">+7(999)-967-96-14</a>
+      <a href="mailto:1kirillmihail1@gmail.com">1kirillmihail1@gmail.com</a>
     </div>
     <div class="section-contact-btn">
       <button id="show-modal" @click="showModal = true" class="animation">

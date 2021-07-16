@@ -18,7 +18,7 @@
             <div class="section-partfolio-title-text">
               <span class="title-wrapper">{{ $t(portfolio.title) }}</span>
               <div class="github">
-                <a target="_blank" :href="portfolio.link"
+                <a v-if="portfolio.link" target="_blank" :href="portfolio.link"
                   ><img src="@/assets/github.png" alt="github"
                 /></a>
               </div>
@@ -86,15 +86,15 @@ export default {
       }
     },
     disableScrolling() {
-      var x = window.scrollX;
-      var y = window.scrollY;
-      window.onscroll = function() {
+      let x = window.scrollX;
+      let y = window.scrollY;
+      window.onscroll = () => {
         window.scrollTo(x, y);
       };
     },
 
     enableScrolling() {
-      window.onscroll = function() {};
+      window.onscroll = () => {};
     }
   }
 };
