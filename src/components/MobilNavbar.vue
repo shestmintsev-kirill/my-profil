@@ -59,7 +59,7 @@ export default {
 
     enableScrolling() {
       window.onscroll = () => {};
-    },
+    }
   }
 };
 </script>
